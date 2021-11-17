@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/styleVending.css" />
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="/vending.js"></script>
+  </head>
+  <body id="vending">
+    <header>
+      <h1>自動販売機シュミレーター</h1>
+    </header>
+    <h1>自動販売機</h1>
+    <main>
+      <div class="cans">
+        <div class="can">
+          <img
+            src="https://askul.c.yimg.jp/img/product/3L1/8889894_3L1.jpg"
+            alt="coke"
+            id="cokeImg"
+          />
+          <button class="buttonBuy" id="coke" onclick="getDrink('coke')">
+            120円
+          </button>
+        </div>
+        <div class="can">
+          <img
+            src="https://item-shopping.c.yimg.jp/i/n/softdrink_4987035337713-2c_1"
+            alt="pokari"
+            id="pokariImg"
+          />
+          <button class="buttonBuy" id="pokari" onclick="getDrink('pokari')">
+            160円
+          </button>
+        </div>
+        <div class="can">
+          <img
+            src="https://m.media-amazon.com/images/I/71Adqz7IMFL._AC_UY218_.jpg"
+            alt="water"
+            id="waterImg"
+          />
+          <button class="buttonBuy" id="water" onclick="getDrink('water')">
+            110円
+          </button>
+        </div>
+        <div class="can">
+          <img
+            src="https://item-shopping.c.yimg.jp/i/n/soukai_4902179115645"
+            alt="orange"
+            id="orangeImg"
+          />
+          <button class="buttonBuy" id="orange" onclick="getDrink('orange')">
+            260円
+          </button>
+        </div>
+      </div>
+      <div class="disp">
+        <h2>投入金額:<span id="deposit">0円</span></h2>
+        <h2>おつり:<span id="change">0円</span></h2>
+        <button onclick="pickupAll()">取出し</button>
+      </div>
+      <div class="pickup">
+        <h2>取り出し口</h2>
+        <div id="pickcan"></div>
+      </div>
+    </main>
+
+    <aside id="wallet">
+      <h1>サイフ</h1>
+      <ul>
+        <li>
+          <button class="buttonBuy" id="coin500" onclick="putcoin(500)">
+            500円玉:3個
+          </button>
+        </li>
+        <li>
+          <button class="buttonBuy" id="coin100" onclick="putcoin(100)">
+            100円玉:3個
+          </button>
+        </li>
+        <li>
+          <button class="buttonBuy" id="coin50" onclick="putcoin(50)">
+            50円玉:3個
+          </button>
+        </li>
+        <li>
+          <button class="buttonBuy" id="coin10" onclick="putcoin(10)">
+            10円玉:10個
+          </button>
+        </li>
+      </ul>
+    </aside>
+
+    <footer>
+      <a href="/index"> Go back to Root page</a>
+    </footer>
+
+    <!-- audio items -->
+
+    <audio
+      id="mpCoin"
+      type="audio/mp3"
+      preload
+      src="https://cdn.glitch.com/6487ef91-cf5a-4420-a932-1d9451fdb854%2Fzihanki_insert.mp3?v=1622064386270"
+    ></audio>
+    <audio
+      id="mpCan"
+      type="audio/mp3"
+      preload
+      src="https://cdn.glitch.com/6487ef91-cf5a-4420-a932-1d9451fdb854%2FdepositCan.mp3?v=1622064260760"
+    ></audio>
+  </body>
+</html>
